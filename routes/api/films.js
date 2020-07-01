@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-approuter.get('/', (req, res) => {
+router.get('/', (req, res) => {
     res.send("Entraste correctamente Funciona!!");
 });
 
