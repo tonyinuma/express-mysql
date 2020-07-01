@@ -8,4 +8,5 @@ this is my practice in node and mysql api
 - PUT: /api/films/{id} - edita una pelicula.
 - DELETE: `/api/films/{id}` - elimina una pelicula.
 
-`/api/users/login`
+
+- Login: `/api/users/login` - iniciar session
