@@ -12,4 +12,11 @@ router.post('/', async(req, res) => {
     res.json(films);
 });
 
+router.put('/:filmId', async(req, res) => {
+    await Film.update(req.body, {
+        where: { id: req.params.filmId }
+    });
+    res.json({succes: 'Se ha modificado'});
+});
+
 module.exports = router;
