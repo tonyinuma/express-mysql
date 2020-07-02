@@ -19,4 +19,11 @@ router.put('/:filmId', async(req, res) => {
     res.json({succes: 'Se ha modificado'});
 });
 
+router.delete('/:filmId', async(req, res) => {
+    await Film.destroy({
+        where: { id: req.params.filmId }
+    });
+    res.json({succes: 'Se ha Eliminado'});
+});
+
 module.exports = router;
