@@ -11,6 +11,12 @@ router.post('/signin', [
     check('password','pasword is required').not().isEmpty(),
 ], async(req, res) => {
 
+    const emailAlready = await User.findOne({ where: { email: req.body.email } });
+
+    if (emailAlready) {
+        res.json({ error: 'Email already exist' });  
+    }
+
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
