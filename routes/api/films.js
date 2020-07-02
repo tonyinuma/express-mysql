@@ -3,6 +3,7 @@ const { Film } = require('../../db/db');
 
 router.get('/', async(req, res) => {
     /* res.send("Entraste correctamente Funciona!!"); */
+    console.log(req.usuarioId);
     const films = await Film.findAll();
     res.json(films);
 });
