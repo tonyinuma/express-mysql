@@ -21,5 +21,19 @@ router.post('/signin', [
 
 });
 
+router.post('/login', async (req, res) => {
+    const user = await User.findOne({ where: { email: req.body.email } });
+    if (user) {
+        const iguales = bcrypt.compareSync(req.body.password, user.password);
+        if (iguales) {
+            res.json({ success: 'TOKEN' });
+        } else {
+            res.json({ error: 'Error en contraseña' });   
+        }
+    } else {
+        res.json({ error: 'Error en usuario y/o contraseña' });
+    }
+});
+
 
 module.exports = router;
