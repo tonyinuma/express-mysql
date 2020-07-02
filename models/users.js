@@ -1,13 +1,13 @@
 
-module.exports = (sequelize, DataTypes) => {
-    return sequelize.define('users',{
+module.exports = (sequelize, type) => {
+    return sequelize.define('user',{
         id: {
-            type: DataTypes.INTEGER,
+            type: type.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        username: DataTypes.STRING,
-        email: DataTypes.STRING,
-        password: DataTypes.STRING(50),
+        username: type.STRING,
+        email: type.STRING,
+        password: type.STRING(150),
     })
 }
