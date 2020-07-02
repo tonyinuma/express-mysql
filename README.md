@@ -10,3 +10,4 @@ this is my practice in node and mysql api
 
 
 - Login: `/api/users/login` - iniciar session
+- Signin: `/api/users/signin` - Resgistrase
